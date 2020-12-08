@@ -152,19 +152,9 @@ public:
     Constructor for List.
     */
     List(std::size_t count, const T& value = {}) : mHead(nullptr), mTail(nullptr), mSize(count)
-    {
-        if (count == 0)
-            return;
-        
-        mHead = new Node(value);
-        mTail = mHead;
-       
-        for (std::size_t i = 1; i < count; ++i)
-        {
-            Node* newNode = new Node(value, nullptr, mTail);
-            mTail->mNext = newNode;
-            mTail = newNode;
-        }
+    {  
+        for (std::size_t i = 0; i < count; ++i)
+        	push_back(value);
     }
 
     /*
