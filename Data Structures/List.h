@@ -151,7 +151,7 @@ public:
     /*
     Constructor for List.
     */
-    List(std::size_t count, const T& value = {}) : mHead(nullptr), mTail(nullptr), mSize(count)
+    List(std::size_t count, const T& value = {}) : mHead(nullptr), mTail(nullptr), mSize(0)
     {  
         for (std::size_t i = 0; i < count; ++i)
         	push_back(value);
