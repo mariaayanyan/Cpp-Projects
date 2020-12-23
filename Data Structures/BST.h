@@ -91,6 +91,7 @@ protected:
     */
     Node* insert_helper(const T& value) 
     {
+            
         if (empty())
         {
             ++mSize;
@@ -350,7 +351,7 @@ protected:
     */
     iterator min_element(iterator root)
     {
-        return iterator(min_element(root.mNode));
+        return iterator(min_element(root.mNode), this);
     }
 
     /*
@@ -358,7 +359,7 @@ protected:
     */
     iterator max_element(iterator root)
     {
-        return iterator(max_element(root.mNode));
+        return iterator(max_element(root.mNode), this);
     }
 
     /*
@@ -366,7 +367,7 @@ protected:
     */
     iterator successor(iterator it)
     {
-        return iterator(successor(it.mNode));
+        return iterator(successor(it.mNode), this);
     }
 
     /*
@@ -374,7 +375,7 @@ protected:
     */
     iterator predecessor(iterator it)
     {
-        return iterator(predecessor(it.mNode));
+        return iterator(predecessor(it.mNode), this);
     }
 public:
     /*
@@ -460,4 +461,4 @@ public:
 private:
     Node* mRoot;
     size_t mSize;
-};
+};  
